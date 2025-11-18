@@ -1,19 +1,23 @@
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
-import { Hero } from '@/components/sections/Hero'
-import { HowItWorks } from '@/components/sections/HowItWorks'
-import { Features } from '@/components/sections/Features'
-import { Integrations } from '@/components/sections/Integrations'
-import { LiveDemo } from '@/components/sections/LiveDemo'
-import { UseCases } from '@/components/sections/UseCases'
-import { Testimonials } from '@/components/sections/Testimonials'
-import { Pricing } from '@/components/sections/Pricing'
+/** @format */
+
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/sections/Hero";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { Features } from "@/components/sections/Features";
+import { Integrations } from "@/components/sections/Integrations";
+import { LiveDemo } from "@/components/sections/LiveDemo";
+import { NavatticDemo } from "@/components/sections/NavatticDemo";
+import { UseCases } from "@/components/sections/UseCases";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { Pricing } from "@/components/sections/Pricing";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
       <Hero />
+      <NavatticDemo />
       <HowItWorks />
       <Features />
       <Integrations />
@@ -23,6 +27,5 @@ export default function Home() {
       <Pricing />
       <Footer />
     </main>
-  )
+  );
 }
-
