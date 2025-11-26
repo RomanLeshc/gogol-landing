@@ -17,10 +17,10 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <NavatticDemo />
+      {/* <NavatticDemo /> */}
       <HowItWorks />
       <Features />
-      <Integrations />
+      {/* <Integrations /> */}
       <LiveDemo />
       <UseCases />
       <Testimonials />

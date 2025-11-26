@@ -64,45 +64,42 @@ export function HowItWorks() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-8 lg:gap-4">
           {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative"
-            >
-              <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 h-full border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all hover:shadow-lg">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center text-primary-600 dark:text-primary-400">
-                      {step.icon}
-                    </div>
+            <div key={step.number} className="contents">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="w-full lg:flex-1 lg:basis-0 h-full"
+              >
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 h-full border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all hover:shadow-lg flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left">
+                  <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center text-primary-600 dark:text-primary-400 mb-4 lg:mb-0 lg:mr-4 flex-shrink-0">
+                    {step.icon}
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <div className="text-sm font-semibold text-primary-600 dark:text-primary-400 mb-1">
                       {step.number}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 break-words">
                       {step.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <p className="text-gray-600 dark:text-gray-300 break-words">
                       {step.description}
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
               
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                  <svg className="w-8 h-8 text-gray-300 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="hidden lg:flex items-center justify-center text-gray-300 dark:text-gray-600 flex-shrink-0">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

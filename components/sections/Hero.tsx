@@ -20,9 +20,9 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
             >
-              Create Your AI Agent{' '}
+              Build Intelligent AI Agents with{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
-                in Minutes
+                Gogol
               </span>
             </motion.h1>
             
@@ -32,7 +32,7 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
             >
-              Add your website URL or upload documents. Our system indexes your data and delivers a fully functional AI assistant you can embed as a chat widget or use internally.
+              The complete platform for creating, managing, and embedding AI agents. Simply add your website or documents, and let Gogol handle the rest.
             </motion.p>
 
             <motion.div
@@ -42,10 +42,10 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Link
-                href="/register"
-                className="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                href="https://gogol-ten.vercel.app/register"
+                className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105"
               >
-                Create Your Agent
+                Start Building Free
               </Link>
               <Link
                 href="#demo"

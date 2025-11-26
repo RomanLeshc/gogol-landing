@@ -8,6 +8,7 @@
 
 # testing
 /coverage
+/gogol-src
 
 # next.js
 /.next/

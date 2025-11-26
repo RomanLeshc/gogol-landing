@@ -13,10 +13,10 @@ export function Footer() {
               <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">AI</span>
               </div>
-              <span className="font-bold text-xl text-gray-900 dark:text-white">gogol</span>
+              <span className="font-bold text-xl text-gray-900 dark:text-white">gogols.ai</span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 max-w-md">
-              Transform your website or documents into an intelligent AI agent. 
+              Transform your website or documents into an intelligent Gogol Agent. 
               Get started in minutes, no coding required.
             </p>
           </div>
@@ -46,7 +46,7 @@ export function Footer() {
             <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#docs" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                <Link href="/docs" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                   Documentation
                 </Link>
               </li>
@@ -76,7 +76,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            © {new Date().getFullYear()} gogol. All rights reserved.
+            © {new Date().getFullYear()} gogols.ai. All rights reserved.
           </p>
           <div className="mt-4 sm:mt-0">
             <ThemeToggle />

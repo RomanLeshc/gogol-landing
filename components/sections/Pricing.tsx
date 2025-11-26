@@ -135,16 +135,16 @@ export function Pricing() {
                 ))}
               </ul>
 
-              <Link
-                href="/register"
-                className={`block w-full text-center py-3 px-6 rounded-lg font-semibold transition-colors ${
-                  plan.popular
-                    ? 'bg-primary-600 hover:bg-primary-700 text-white'
-                    : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white'
-                }`}
-              >
-                {plan.cta}
-              </Link>
+                <Link
+                  href="https://gogol-ten.vercel.app/register"
+                  className={`block w-full py-3 px-6 rounded-lg text-center font-medium transition-colors ${
+                    plan.popular
+                      ? 'bg-primary-600 hover:bg-primary-700 text-white'
+                      : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white'
+                  }`}
+                >
+                  Get Started
+                </Link>
             </motion.div>
           ))}
         </div>
