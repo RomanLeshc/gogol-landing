@@ -5,30 +5,27 @@ import { ThemeToggle } from './ThemeToggle'
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-cyber-cyan/30 bg-cyber-black/80 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">AI</span>
+          <Link href="/" className="flex items-center space-x-2 group">
+            <div className="w-8 h-8 bg-cyber-dark border border-cyber-cyan rounded-none flex items-center justify-center group-hover:box-glow transition-all">
+              <span className="text-cyber-cyan font-bold text-lg font-mono">AI</span>
             </div>
-            <span className="font-bold text-xl text-gray-900 dark:text-white">gogols.ai</span>
+            <span className="font-bold text-xl text-white font-mono group-hover:text-cyber-pink transition-colors">gogols.ai</span>
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#features" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-              Features
-            </Link>
-            <Link href="#integrations" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-              Integrations
-            </Link>
-            <Link href="#demo" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-              Demo
-            </Link>
-            <Link href="#pricing" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-              Pricing
-            </Link>
-            <Link href="/docs" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+            {['Features', 'Integrations', 'Demo', 'Pricing'].map((item) => (
+              <Link 
+                key={item}
+                href={`#${item.toLowerCase()}`} 
+                className="text-gray-300 hover:text-cyber-cyan transition-colors font-mono text-sm uppercase tracking-wider hover:text-glow"
+              >
+                {item}
+              </Link>
+            ))}
+            <Link href="/docs" className="text-gray-300 hover:text-cyber-cyan transition-colors font-mono text-sm uppercase tracking-wider hover:text-glow">
               Docs
             </Link>
           </nav>
@@ -37,13 +34,14 @@ export function Header() {
             <ThemeToggle />
             <Link
               href="https://gogol-ten.vercel.app/login"
-              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              className="text-gray-300 hover:text-cyber-pink transition-colors font-mono text-sm uppercase tracking-wider"
             >
               Sign In
             </Link>
             <Link
               href="https://gogol-ten.vercel.app/register"
-              className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors"
+              className="bg-cyber-cyan text-cyber-black px-4 py-2 font-bold text-sm uppercase tracking-wider hover:bg-white transition-colors clip-path-polygon"
+              style={{ clipPath: 'polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%)' }}
             >
               Get Started
             </Link>

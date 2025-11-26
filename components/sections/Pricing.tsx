@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { CyberBackground } from '../ui/CyberBackground'
 
 const plans = [
   {
@@ -54,8 +55,9 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="relative py-20 bg-cyber-black overflow-hidden">
+      <CyberBackground />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,10 +65,10 @@ export function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-glow">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto font-mono">
             Choose the plan that fits your needs
           </p>
         </motion.div>
@@ -79,35 +81,35 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative bg-white dark:bg-gray-900 rounded-2xl p-8 border-2 ${
+              className={`relative bg-cyber-dark rounded-none p-8 border-2 ${
                 plan.popular
-                  ? 'border-primary-500 shadow-xl scale-105'
-                  : 'border-gray-200 dark:border-gray-700'
-              }`}
+                  ? 'border-cyber-pink box-glow scale-105 z-10'
+                  : 'border-cyber-cyan/30 hover:border-cyber-cyan'
+              } transition-all`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-primary-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-cyber-pink text-white px-4 py-1 font-bold text-sm uppercase tracking-wider box-glow">
                     Most Popular
                   </span>
                 </div>
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-2xl font-bold text-white mb-2 font-mono uppercase">
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline justify-center mb-2">
-                  <span className="text-4xl font-bold text-gray-900 dark:text-white">
+                  <span className={`text-4xl font-bold ${plan.popular ? 'text-cyber-pink' : 'text-cyber-cyan'}`}>
                     {plan.price}
                   </span>
                   {plan.period && (
-                    <span className="text-gray-600 dark:text-gray-400 ml-2">
+                    <span className="text-gray-400 ml-2 font-mono">
                       /{plan.period}
                     </span>
                   )}
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                <p className="text-gray-400 text-sm font-mono">
                   {plan.description}
                 </p>
               </div>
@@ -116,7 +118,7 @@ export function Pricing() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start">
                     <svg
-                      className="w-5 h-5 text-primary-600 dark:text-primary-400 mr-3 flex-shrink-0 mt-0.5"
+                      className={`w-5 h-5 ${plan.popular ? 'text-cyber-pink' : 'text-cyber-cyan'} mr-3 flex-shrink-0 mt-0.5`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -128,7 +130,7 @@ export function Pricing() {
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <span className="text-gray-300 font-mono text-sm">
                       {feature}
                     </span>
                   </li>
@@ -137,10 +139,10 @@ export function Pricing() {
 
                 <Link
                   href="https://gogol-ten.vercel.app/register"
-                  className={`block w-full py-3 px-6 rounded-lg text-center font-medium transition-colors ${
+                  className={`block w-full py-3 px-6 text-center font-bold uppercase tracking-wider transition-all ${
                     plan.popular
-                      ? 'bg-primary-600 hover:bg-primary-700 text-white'
-                      : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white'
+                      ? 'bg-cyber-pink text-white hover:bg-white hover:text-cyber-pink box-glow'
+                      : 'bg-transparent border border-cyber-cyan text-cyber-cyan hover:bg-cyber-cyan hover:text-cyber-black'
                   }`}
                 >
                   Get Started

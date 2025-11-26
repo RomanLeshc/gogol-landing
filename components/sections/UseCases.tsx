@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { CyberBackground } from '../ui/CyberBackground'
 
 const useCases = [
   {
@@ -67,8 +68,9 @@ const useCases = [
 
 export function UseCases() {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 bg-cyber-black overflow-hidden">
+      <CyberBackground variant="matrix" />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,10 +78,10 @@ export function UseCases() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-glow">
             Use Cases
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto font-mono">
             See how businesses use AI agents to improve their operations
           </p>
         </motion.div>
@@ -92,15 +94,16 @@ export function UseCases() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all group"
+              className="group bg-cyber-dark rounded-none p-6 border border-cyber-cyan/20 hover:border-cyber-cyan transition-all hover:box-glow relative overflow-hidden"
             >
-              <div className={`w-16 h-16 bg-gradient-to-br ${useCase.color} rounded-lg flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform`}>
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-cyber-cyan/50 transform -translate-x-full group-hover:animate-scanline"></div>
+              <div className={`w-16 h-16 bg-gradient-to-br ${useCase.color} rounded-none flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform border border-white/20`}>
                 {useCase.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyber-cyan transition-colors">
                 {useCase.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-400 font-mono text-sm">
                 {useCase.description}
               </p>
             </motion.div>

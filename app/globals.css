@@ -3,18 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-  }
-
   body {
-    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+    @apply bg-cyber-black text-gray-100 bg-cyber-grid bg-[length:40px_40px];
   }
 }
 
@@ -22,5 +12,34 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  .text-glow {
+    text-shadow: 0 0 10px currentColor;
+  }
+  
+  .box-glow {
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 10px currentColor;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cyber-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyber-cyan rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cyber-pink;
 }
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { CyberBackground } from '../ui/CyberBackground'
 
 const steps = [
   {
@@ -47,8 +48,9 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="how-it-works" className="relative py-20 bg-cyber-black overflow-hidden">
+      <CyberBackground variant="matrix" />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,10 +58,10 @@ export function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-glow">
             How It Works
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto font-mono">
             Get your AI agent up and running in just four simple steps
           </p>
         </motion.div>
@@ -74,18 +76,19 @@ export function HowItWorks() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="w-full lg:flex-1 lg:basis-0 h-full"
               >
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 h-full border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all hover:shadow-lg flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left">
-                  <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center text-primary-600 dark:text-primary-400 mb-4 lg:mb-0 lg:mr-4 flex-shrink-0">
+                <div className="group bg-cyber-dark rounded-none p-6 h-full border border-cyber-pink/20 hover:border-cyber-pink transition-all hover:box-glow flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-[1px] bg-cyber-pink/50 transform translate-x-full group-hover:animate-scanline"></div>
+                  <div className="w-16 h-16 bg-cyber-pink/10 rounded-none flex items-center justify-center text-cyber-pink mb-4 lg:mb-0 lg:mr-4 flex-shrink-0 border border-cyber-pink/50 group-hover:bg-cyber-pink group-hover:text-cyber-black transition-colors">
                     {step.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-sm font-semibold text-primary-600 dark:text-primary-400 mb-1">
+                    <div className="text-sm font-bold text-cyber-pink mb-1 font-mono">
                       {step.number}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 break-words">
+                    <h3 className="text-xl font-bold text-white mb-2 break-words group-hover:text-cyber-pink transition-colors">
                       {step.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 break-words">
+                    <p className="text-gray-400 break-words text-sm font-mono">
                       {step.description}
                     </p>
                   </div>
@@ -93,8 +96,8 @@ export function HowItWorks() {
               </motion.div>
               
               {index < steps.length - 1 && (
-                <div className="hidden lg:flex items-center justify-center text-gray-300 dark:text-gray-600 flex-shrink-0">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="hidden lg:flex items-center justify-center text-cyber-gray flex-shrink-0">
+                  <svg className="w-8 h-8 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>

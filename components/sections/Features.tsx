@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { CyberBackground } from '../ui/CyberBackground'
 
 const features = [
   {
@@ -79,8 +80,9 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="relative py-20 bg-cyber-black overflow-hidden">
+      <CyberBackground variant="neon" />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -88,10 +90,10 @@ export function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-glow">
             Powerful Features
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto font-mono">
             Everything you need to create and deploy your AI agent
           </p>
         </motion.div>
@@ -104,15 +106,16 @@ export function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.05 }}
-              className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all hover:shadow-lg"
+              className="group bg-cyber-dark rounded-none p-6 border border-cyber-cyan/20 hover:border-cyber-cyan transition-all hover:box-glow relative overflow-hidden"
             >
-              <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center text-primary-600 dark:text-primary-400 mb-4">
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-cyber-cyan/50 transform -translate-x-full group-hover:animate-scanline"></div>
+              <div className="w-12 h-12 bg-cyber-cyan/10 rounded-none flex items-center justify-center text-cyber-cyan mb-4 border border-cyber-cyan/50 group-hover:bg-cyber-cyan group-hover:text-cyber-black transition-colors">
                 {feature.icon}
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyber-cyan transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <p className="text-gray-400 text-sm font-mono">
                 {feature.description}
               </p>
             </motion.div>
