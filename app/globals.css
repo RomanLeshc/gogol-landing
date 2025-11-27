@@ -2,28 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-cyber-black text-gray-100 bg-cyber-grid bg-[length:40px_40px];
-  }
+body {
+  @apply bg-gray-50 dark:bg-cyber-black text-gray-900 dark:text-gray-100 bg-[length:40px_40px];
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  
-  .text-glow {
-    text-shadow: 0 0 10px currentColor;
-  }
-  
-  .box-glow {
-    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
-  }
+/* Light theme grid */
+body:not(.dark) {
+  background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+}
 
-  .border-glow {
-    box-shadow: 0 0 10px currentColor;
-  }
+/* Dark theme grid */
+body.dark {
+  background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px currentColor;
+}
+
+.box-glow {
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+}
+
+.border-glow {
+  box-shadow: 0 0 10px currentColor;
 }
 
 /* Custom Scrollbar */
@@ -32,14 +34,13 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-cyber-dark;
+  @apply bg-gray-200 dark:bg-cyber-dark;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-cyber-cyan rounded-full;
+  @apply bg-primary-500 dark:bg-cyber-cyan rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-cyber-pink;
+  @apply bg-primary-600 dark:bg-cyber-cyan;
 }
-

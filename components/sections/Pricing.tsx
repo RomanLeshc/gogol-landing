@@ -139,7 +139,7 @@ export function Pricing() {
 
                 <Link
                   href="https://gogol-ten.vercel.app/register"
-                  className={`block w-full py-3 px-6 text-center font-bold uppercase tracking-wider transition-all ${
+                  className={`block w-full py-3 px-6 text-center font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer hover:scale-105 ${
                     plan.popular
                       ? 'bg-cyber-pink text-white hover:bg-white hover:text-cyber-pink box-glow'
                       : 'bg-transparent border border-cyber-cyan text-cyber-cyan hover:bg-cyber-cyan hover:text-cyber-black'

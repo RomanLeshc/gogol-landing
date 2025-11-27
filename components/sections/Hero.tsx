@@ -6,8 +6,15 @@ import { GlitchText } from '../ui/GlitchText'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-cyber-black pt-20 pb-32">
-      <div className="absolute inset-0 bg-cyber-grid bg-[length:40px_40px] opacity-20"></div>
+    <section className="relative overflow-hidden bg-gray-50 dark:bg-cyber-black pt-20 pb-32">
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 bg-[length:40px_40px]" style={{
+          backgroundImage: 'linear-gradient(to right, #d1d5db 1px, transparent 1px), linear-gradient(to bottom, #d1d5db 1px, transparent 1px)'
+        }}></div>
+      </div>
+      <div className="absolute inset-0 dark:opacity-20 opacity-0">
+        <div className="absolute inset-0 bg-cyber-grid bg-[length:40px_40px]"></div>
+      </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -16,13 +23,13 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
               Build Intelligent <br />
-              <span className="text-cyber-cyan text-glow">
+              <span className="text-primary-600 dark:text-cyber-cyan text-glow">
                 <GlitchText text="AI Agents" />
               </span>{' '}
               with{' '}
-              <span className="text-cyber-pink text-glow">
+              <span className="text-primary-700 dark:text-cyber-pink text-glow">
                 <GlitchText text="Gogol" />
               </span>
             </h1>
@@ -31,9 +38,10 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 font-mono"
+              className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 font-mono"
             >
-              The complete platform for creating, managing, and embedding AI agents. Simply add your website or documents, and let Gogol handle the rest.
+              Transform your website or documents into an intelligent AI agent in minutes. 
+              No coding required.
             </motion.p>
 
             <motion.div
@@ -44,15 +52,15 @@ export function Hero() {
             >
               <Link
                 href="https://gogol-ten.vercel.app/register"
-                className="relative group px-8 py-4 bg-cyber-cyan text-cyber-black font-bold text-lg clip-path-polygon hover:bg-white transition-colors"
+                className="relative group px-8 py-4 bg-cyber-cyan text-cyber-black font-bold text-lg clip-path-polygon hover:bg-white transition-all duration-300 cursor-pointer hover:scale-105"
                 style={{ clipPath: 'polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%)' }}
               >
                 <span className="relative z-10">Start Building Free</span>
-                <div className="absolute inset-0 bg-cyber-pink opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute inset-0 bg-cyber-pink opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
               </Link>
               <Link
                 href="#demo"
-                className="relative px-8 py-4 bg-transparent border border-cyber-pink text-cyber-pink font-bold text-lg hover:bg-cyber-pink hover:text-white transition-all box-glow"
+                className="relative px-8 py-4 bg-transparent border border-cyber-pink text-cyber-pink font-bold text-lg hover:bg-cyber-pink hover:text-white transition-all duration-300 box-glow cursor-pointer"
                 style={{ clipPath: 'polygon(0 0, 90% 0, 100% 30%, 100% 100%, 10% 100%, 0 70%)' }}
               >
                 Watch Demo
